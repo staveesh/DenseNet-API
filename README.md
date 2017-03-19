@@ -34,7 +34,7 @@ from Graph_API import Optimiser
 opti = Optimiser(learning_rate=0.09, momentum_eta=0.5)
 
 X_train = # Inputs
-Y_train = # Labels
+Y_train = # One-hot encoded Labels
 net = DenseNet(X_train.shape,opti,'cross entropy') # 'l1' for L1 loss, 'l2' for L2 loss, 'svm' for svm
 
 ```
@@ -57,7 +57,7 @@ The train function runs SGD for 1 iteration only. Call it for multiple iteration
 ```python 
 iterations = 10000
 for i in range(iterations):
-  error = net.train(X,Y)
+  error = net.train(X_train,Y_train)
 ```
 
 To make predictions use :
