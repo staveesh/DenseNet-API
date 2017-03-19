@@ -36,10 +36,13 @@ X = # Inputs
 y = # Labels
 net = DenseNet(X.shape,opti,'cross entropy') # 'l1' for L1 loss, 'l2' for L2 loss, 'svm' for svm
 
-# To add a hidden layer, simply call addlayer function indicating the activation function and number of neurons
+# To add a hidden/output layer, simply call addlayer function with activation function and number of neurons.
+
 net.addlayer(activation='sigmoid',units=4)
 net.addlayer(activation='relu', units=3)
+
 # For output layer, add units same as the number of classes
+
 net.addlayer(activation='softmax',units=y.shape[1])
 ```
 
